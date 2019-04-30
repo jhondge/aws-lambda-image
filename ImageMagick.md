@@ -39,6 +39,7 @@ Goto source code and build (The install dir is `/usr/local/lib`)
 cd libde265-1.0.3/ && ./autogen.sh && ./configure && make && make install
 cd ../
 ```
+**Node:** The libde265-1.0.3 has a issue when load heic image the issue num [56](https://github.com/strukturag/libheif/issues/56#issuecomment-412515858), so need use the `master` branch to build
 
 #### Build heic
 * Set env
@@ -83,7 +84,7 @@ cd ../
 NOTE: target path: `/etc/imagemagick`
 
 ```bash
-cd ImageMagick-7.0.8-41/
+cd ImageMagick-7.0.8-42/
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export LDFLAGS=-L/usr/local/lib
 export CPPFLAGS='-I/usr/local/include/libheif -I/usr/local/include/openjpeg-2.3 -I/usr/local/include/webp'
