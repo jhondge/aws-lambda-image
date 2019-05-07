@@ -3,7 +3,7 @@
 You know the amazon lambda service does not allow create own customize environment for lambda server, so we need build the `ImageMagick`library
 for ourself and set the node js env path `LD_LIBRARY_PATH` as our library path in the zip    
 
-Support file formats: `heic`, `webp`, `jp2`
+Support file formats: `heic`, `webp`, `jp2`，`DNG`
 
 ## Requirements
 * Docker environment
@@ -12,6 +12,7 @@ Support file formats: `heic`, `webp`, `jp2`
         * dependency: [libde256](https://github.com/strukturag/libde265)
     * [webp](https://developers.google.com/speed/webp/)
     * [jp2](https://github.com/uclouvain/openjpeg)
+    * [ufraw](http://ufraw.sourceforge.net/Install.html#Linux)
 
 ## Build
 
@@ -69,6 +70,12 @@ cd ../../
 cd libwebp-1.0.2/ && ./configure && make && make install
 cd ../
 ```
+### Build ufraw
+
+```bash
+cd ufraw-0.22/ && ./configure && make && make install
+cd ../
+```
 
 ### Build ImageMagick
 
@@ -110,5 +117,6 @@ cd /var/task && mkdir lib
     * copy binaries
     ```bash
     cp -r /etc/imagemagick/bin /var/task/
+    cp /usr/local/bin/ufraw-batch /var/task/bin/
     ```
 
